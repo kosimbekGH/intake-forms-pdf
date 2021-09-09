@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Pr2GhodadraPdfService} from "./services/pr2-ghodadra-pdf.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'intake-forms-pdf';
+  constructor(
+    private pr2GholdadraPdfService: Pr2GhodadraPdfService
+  ) {}
+
+  openPdf(){
+    this.pr2GholdadraPdfService.generatePdf();
+  }
 }
